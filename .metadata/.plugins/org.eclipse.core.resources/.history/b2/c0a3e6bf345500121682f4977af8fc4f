@@ -1,0 +1,18 @@
+package net.lastmine.BankPlugin;
+
+import net.lastmine.BankPlugin.CMD.CMD_bank;
+import net.lastmine.BankPlugin.listener.SignChange;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class main extends JavaPlugin{
+	
+	public void onEnabe(){
+		getCommand("bank").setExecutor(new CMD_bank(this));
+		getServer().getPluginManager().registerEvents(new SignChange(), this);
+	}
+	public void onDisable(){
+		
+	}
+
+}

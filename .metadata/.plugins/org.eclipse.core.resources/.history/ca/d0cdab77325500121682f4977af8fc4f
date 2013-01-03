@@ -1,0 +1,14 @@
+package net.lastmine.BankPlugin;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class main extends JavaPlugin{
+	
+	public void onEnabe(){
+		getCommand("bank").setExecutor(new CMD_bank(this));
+	}
+	public void onDisable(){
+		
+	}
+
+}

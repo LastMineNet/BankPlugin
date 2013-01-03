@@ -1,0 +1,5 @@
+package net.lastmine.BankPlugin.CMD;
+
+public class CMD_bank {
+
+}

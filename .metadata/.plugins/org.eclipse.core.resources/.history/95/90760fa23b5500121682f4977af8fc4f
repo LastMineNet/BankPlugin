@@ -1,0 +1,23 @@
+package net.lastmine.BankPlugin.CMD;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.Plugin;
+
+public class CMD_bank implements CommandExecutor{
+	
+	private Plugin plugin;
+
+	public CMD_bank(Plugin thisplugin){
+		this.plugin = thisplugin;
+	}
+
+	@Override
+	public boolean onCommand(CommandSender sender, Command cmd, String lable,
+			String[] args) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

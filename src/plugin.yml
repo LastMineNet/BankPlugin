@@ -1,0 +1,13 @@
+name: BankPlugin
+version: 1.0
+main: net.lastmine.BankPlugin.main
+commands:
+    bank:
+        default: op
+permissions:
+    bp.sign.use:
+        defautl: op
+    bp.sign.create:
+        default: op
+    bp.commands.bank.admin:
+        defaukt: op

@@ -1,0 +1,26 @@
+package net.lastmine.BankPlugin.listener;
+
+import java.util.HashMap;
+
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerChatEvent;
+
+@SuppressWarnings("deprecation")
+public class PlayerChat implements Listener{
+	
+	static HashMap<String, String> UserAmount = new HashMap<String, String>();
+	
+	@EventHandler
+	public void onPlayerChat(PlayerChatEvent e){
+		if(e.getPlayer().hasPermission("bp.sign.use")){
+			if(PlayerInteract.AmoutListIn.contains(e.getPlayer().getName())){
+				if(UserAmount.containsKey(e.getPlayer().getName())){
+					
+				}
+			}
+		} else {
+			e.getPlayer().sendMessage("§8[§3BankPlugin§8] §4Du hast keine Permission für diese Aktion");
+		}
+	}
+}

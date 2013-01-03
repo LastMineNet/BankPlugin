@@ -1,0 +1,28 @@
+package net.lastmine.BankPlugin.listener;
+
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.SignChangeEvent;
+
+public class SignChange implements Listener {
+
+	@EventHandler
+	public void onSignChange(SignChangeEvent e){
+		if(e.getLine(0).equalsIgnoreCase("Bank")){
+			
+			/*
+			 * Types:
+			 * 0 = Guthaben
+			 * 1 = Einzahlen
+			 * 2 = Auszahlen
+			 */
+			if(e.getLine(1).equalsIgnoreCase("0")){
+				Signs.
+			} else if(e.getLine(1).equalsIgnoreCase("1")){
+				
+			} else if(e.getLine(1).equalsIgnoreCase("2")){
+				
+			}
+		}
+	}
+}

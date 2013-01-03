@@ -1,0 +1,5 @@
+package net.lastmine.BankPlugin.listener;
+
+public class BlockPlace {
+
+}

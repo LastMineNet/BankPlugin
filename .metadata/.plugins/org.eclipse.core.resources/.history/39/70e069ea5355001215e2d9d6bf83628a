@@ -1,0 +1,31 @@
+package net.lastmine.BankPlugin.listener;
+
+import org.bukkit.block.Sign;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
+
+public class PlayerInteract implements Listener {
+
+	
+	@EventHandler
+	public void onPlayerInteract(PlayerInteractEvent e){
+		if(e.getAction() == Action.RIGHT_CLICK_BLOCK){
+			if(e.getClickedBlock().getState() instanceof Sign){
+				Sign s = (Sign)e.getClickedBlock().getState();
+			}
+		}
+		if(e.getAction() == Action.LEFT_CLICK_BLOCK){
+			if(e.getClickedBlock().getState() instanceof Sign){
+				Sign s = (Sign)e.getClickedBlock().getState();
+				if(s.getLine(0).equalsIgnoreCase("§8[§3Bank§8]")){
+					if(e.getPlayer().hasPermission("bp.sign.use")){
+					} else {
+						e.getPlayer().sendMessage("§8[§3BankPlugin§8] §4Du hast keine Permission für diese Aktion");
+					}
+				}
+			}
+		}
+	}
+}
