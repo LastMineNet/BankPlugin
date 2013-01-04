@@ -1,6 +1,9 @@
 package net.lastmine.BankPlugin.CMD;
 
+import net.lastmine.BankPlugin.main;
+import net.lastmine.BankPlugin.Utils.Config;
 import net.lastmine.BankPlugin.Utils.Signs;
+import net.lastmine.BankPlugin.Utils.UserBank;
 
 import org.bukkit.block.Sign;
 import org.bukkit.command.Command;
@@ -53,6 +56,25 @@ public class CMD_bank implements CommandExecutor {
 					}
 				} else {
 					
+				}
+			}
+		}
+		if(args[0].equalsIgnoreCase("get")){
+			if(args.length == 1){
+				p.sendMessage("§8[§3BankPlugin§8] §4Syntax: §c/bank get <Player>");
+			}
+			if(args.length == 2){
+				if(UserBank.FileConfiguration().contains("Users."+args[1])){
+					double Guthaben = main.economy.getBalance(p.getName());
+					String Geliehen = UserBank.FileConfiguration().getString("Users."+args[1]+".in");
+					p.sendMessage(
+							"§8[§3BankPlugin§8] §4"+args[1]+"'s Guthaben: "
+									+ Guthaben+ " "+main.economy.currencyNamePlural());
+					p.sendMessage(
+							"§8[§3BankPlugin§8] §4"+args[1]+"'s Guthaben auf der Bank: "
+									+ Geliehen+".0 "+main.economy.currencyNamePlural());
+				} else {
+					p.sendMessage("§8[§3BankPlugin§8] §4Spieler nicht gefunden!");
 				}
 			}
 		}

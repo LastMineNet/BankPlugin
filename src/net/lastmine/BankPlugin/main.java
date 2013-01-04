@@ -9,6 +9,7 @@ import net.lastmine.BankPlugin.listener.BlockPlace;
 import net.lastmine.BankPlugin.listener.PlayerChat;
 import net.lastmine.BankPlugin.listener.PlayerInteract;
 import net.lastmine.BankPlugin.listener.SignChange;
+import net.lastmine.BankPlugin.timer.zins;
 import net.milkbowl.vault.economy.Economy;
 
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -29,10 +30,17 @@ public class main extends JavaPlugin{
 		UserBank.pl = this;
 		Signs.pl = this;
 		PlayerInteract.pl = this;
+		PlayerChat.pl = this;
+		zins.pl = this;
 		Config.ReLoadConfig();
 		UserBank.ReLoadConfig();
 		Signs.ReLoadConfig();
+		Config.FileConfiguration().addDefault("Config.Zins.addTime", "12:00");
+		Config.FileConfiguration().addDefault("Config.Zins.Value", 10);
+		Config.FileConfiguration().options().copyDefaults(true);
+		Config.SaveConfig();
 		setupEconomy();
+		zins.ZinsTimer();
 
 	}
 	public void onDisable(){

@@ -1,6 +1,0 @@
-name: BankPlugin
-version: 1.0
-main: net.lastmine.BankPlugin.main
-commands:
-    bp.sign.use:
-        default: op

@@ -37,7 +37,7 @@ public class SignChange implements Listener {
 			} else if (e.getLine(1).equalsIgnoreCase("2")) {
 				Signs.getConfig().set("Signs."+PosComp.replace(".", ",")+".Type", 2);
 				e.setLine(0, "§8[§3Bank§8]");
-				e.setLine(1, "§7Leihen");
+				e.setLine(1, "§7Auszahlen");
 				e.setLine(2, "");
 				e.setLine(3, "");
 				Signs.SaveConfig();

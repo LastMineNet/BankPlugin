@@ -1,7 +1,0 @@
-package net.lastmine.BankPlugin.listener;
-
-import org.bukkit.event.Listener;
-
-public class BlockPlace implements Listener {
-
-}
